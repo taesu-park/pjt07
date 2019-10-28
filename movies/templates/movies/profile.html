@@ -1,0 +1,19 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<h1>
+{{ movie.title }}
+</h1>
+<h2>
+{{ movie.audience }}
+</h2>
+<h2><img src="{{ movie.poster_url }}" alt="" width="200px"></h2>
+<h3>
+{{ movie.description }}
+</h3>
+<h3>
+{{ movie.genre.name }}
+</h3>
+<h3>
+{{ movie.like_users }}
+</h3>
+{% endblock %}

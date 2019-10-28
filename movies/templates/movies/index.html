@@ -1,0 +1,8 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+{% for movie in movies %}
+<a href="{% url 'movies:profile' movie.pk %} "><img src="{{ movie.poster_url }}" alt="" width="150px" height="150px"></a>
+<hr>
+
+{% endfor %}
+{% endblock %}

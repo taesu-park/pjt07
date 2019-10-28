@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<form action="{% url 'accounts:signup' %}" method="POST">
+{% csrf_token %}
+<input type="submit" value="회원가입">
+</form>
+<form action="{% url 'accounts:login' %}" method="POST">
+{% csrf_token %}
+<input type="submit" value="로그인">
+</form>
+<form action="{% url 'accounts:logout' %}" method="POST">
+{% csrf_token %}
+<input type="submit" value="로그아웃">
+</form>
+{% for user in users %}
+<a href="{% url 'accounts:profile' user.pk %}">
+{{ user }}
+</a>
+<hr>
+{% endfor %}
+{% endblock %}
